@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+</head>
+<style>
+    body
+    {
+        background-color: rgb(38, 38, 38);
+    }
+    .container 
+    {
+        background-color: #38475d;
+        padding: 20px;
+        text-align: center;
+        border: 2px solid;
+        width: 18%;
+        height: 35%;
+        margin-left: 500px;
+        margin-top: 200px;
+        color: #33ffd8;
+    }
+    input[type="text"] 
+    {
+        width: 80%;
+        padding: 5px;
+        margin-bottom: 10px;
+        margin-top: 10px;
+        background-color: #38475d;
+        color: white;
+    }
+    button
+    {
+        width: 50px;
+        height: 40px;
+        font-size: 16px;
+        margin: 5px;
+        background-color: #38475d;
+        border-radius: 10px;
+        color: white;
+    }
+    .equal 
+    {
+        width: 190%;
+    }
+    .operation
+    {
+        color: #00fecf;
+    }
+</style>
+<body>
+    <div class="container">
+        <input type="text" id="result" >
+        <table>
+            <tr>
+                <td><button class='operation' onclick="Clean()">AC</button></td>
+                <td><button class='operation'onclick="Delete()">DE</button></td>
+                <td><button class='operation'onclick="appendCharacter('.')">.</button></td>
+                <td><button class='operation'onclick="appendCharacter('/')">/</button></td>
+            </tr>
+
+            <tr>
+                <td><button onclick="appendCharacter('7')">7</button></td>
+                <td><button onclick="appendCharacter('8')">8</button></td>
+                <td><button onclick="appendCharacter('9')">9</button></td>
+                <td><button class='operation'onclick="appendCharacter('*')">*</button></td>
+            </tr>
+
+            <tr>
+                <td><button onclick="appendCharacter('6')">6</button></td>
+                <td><button onclick="appendCharacter('5')">5</button></td>
+                <td><button onclick="appendCharacter('4')">4</button></td>
+                <td><button class='operation'onclick="appendCharacter('-')">-</button></td>
+            </tr>
+
+            <tr>
+                <td><button onclick="appendCharacter('1')">1</button></td>
+                <td><button onclick="appendCharacter('2')">2</button></td>
+                <td><button onclick="appendCharacter('3')">3</button></td>
+                <td><button class='operation'onclick="appendCharacter('+')">+</button></td>
+            </tr>
+
+            <tr>
+                <td><button onclick="appendCharacter('00')">00</button></td>
+                <td><button onclick="appendCharacter('0')">0</button></td>
+                <td><button class='operation equal' onclick="Calresult('=')">=</button></td>
+            </tr>
+        </table>
+    </div>
+    <script>
+        let result = document.getElementById('result');
+
+        function appendCharacter(char) {
+            if (result.value.slice(-1) != 'r') 
+            {
+                result.value += char;
+            }
+            else {
+                result.value = ''
+                result.value += char;
+            }
+        }
+
+        function Delete() 
+        {
+           result.value = result.value.slice(0, -1);
+        }
+
+        function Clean() 
+        {
+           result.value = '';
+        }
+
+        function Calresult() 
+        {
+           try 
+           {
+              result.value = eval(result.value);
+           }
+           catch (error) 
+           {
+              result.value = 'Error';
+
+           }
+
+        }
+
+    </script>
+</body>
+</html>
