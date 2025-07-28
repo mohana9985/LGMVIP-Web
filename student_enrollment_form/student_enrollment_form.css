@@ -1,0 +1,45 @@
+header 
+  {
+    background-color: #333;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+  }
+  body 
+  {
+    background-color: linen;
+    font-family: Arial, sans-serif;
+    margin: 20px;
+  }
+  .container 
+  {
+    font-size: large;
+    float: left;
+    width: 48%;
+    padding: 10px;
+    background-color: #1e847594;
+    border-radius: 5px;
+    text-align: center;
+    margin-top: 40px;
+    height: 400px;
+  }
+  .enrollmentform 
+  {
+    background-color: bisque;
+    margin-top: 40px;
+    width: 48%;
+    float: right; 
+    text-align:left;
+  }
+  #img
+  {
+    width: 30%;
+    float: right;
+
+  }
+  #details{
+    width: 69%;
+    float: left;
+    border: 1px;
+
+  }
